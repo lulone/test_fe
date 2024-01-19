@@ -1,0 +1,322 @@
+@import url(https://fonts.googleapis.com/css2?family=Rubik:wght@300;700&amp;display=swap);body {
+    color: #303841;
+    font-family: Rubik,sans-serif;
+    margin: 0;
+}
+
+.main{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    height: 100vh;
+    max-width: 760px;
+    padding: 0 20px;
+    margin: 0 auto;
+}
+
+.main:before {
+    content: "";
+    display: block;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    background-color: #f6c90e;
+    width: 300%;
+    height: 100%;
+    border-radius: 100%;
+    transform: translateX(-50%) skewY(0deg);
+    z-index: -1;
+}
+
+.card{
+    box-sizing: border-box;
+    position: relative;
+    background-color: #fff;
+    width: 360px;
+    height: 600px;
+    padding: 0 28px;
+    margin-bottom: 20px;
+    border-radius: 30px;
+    box-shadow: 0 3.2px 2.2px rgba(0,0,0,.02),0 7px 5.4px rgba(0,0,0,.028),0 12.1px 10.1px rgba(0,0,0,.035),0 19.8px 18.1px rgba(0,0,0,.042),0 34.7px 33.8px rgba(0,0,0,.05),0 81px 81px rgba(0,0,0,.07);
+    overflow: hidden;
+}
+
+.card:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: -20%;
+    left: -50%;
+    background-color: #f6c90e;
+    width: 300px;
+    height: 300px;
+    border-radius: 100%;
+    z-index: 0;
+}
+
+.card__header {
+    position: relative;
+    margin: 12px 0;
+}
+
+.card__header-logo {
+    display: block;
+    width: 50px;
+    height: 26px;
+}
+
+.card__title {
+    position: relative;
+    font-size: 24px;
+    font-weight: 700;
+    margin: 16px 0;
+}
+
+.card__title-totalPrice {
+    float: right;
+}
+
+.card__body {
+    position: relative;
+    height: calc(100% - 98px);
+    overflow-y: scroll;
+    scrollbar-width: none;
+}
+
+.card__body::-webkit-scrollbar {
+    display: none;
+}
+
+.card__body-item {
+    padding: 40px 0;
+}
+
+.card__body-item:first-child {
+    padding-top: 0;
+}
+
+.card__body-item-image {
+    display: flex;
+    align-items: center;
+    height: 380px;
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+.card__body-item-image img {
+    display: block;
+    width: 100%;
+    margin-left: -16px;
+    transform: rotate(-30deg);
+}
+
+.card__body-item-name {
+    line-height: 1.5;
+    font-size: 20px;
+    font-weight: 700;
+    margin: 26px 0 20px;
+}
+
+.card__body-item-desc {
+    color: #777;
+    line-height: 1.8;
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+.card__body-item-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card__body-item-price {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.card__body-item-shopButton {
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-color: #f6c90e;
+    font-size: 14px;
+    font-weight: 700;
+    min-width: 46px;
+    width: auto;
+    height: 46px;
+    border-radius: 100px;
+    padding: 16px 20px;
+    transition: all .25s ease;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.card__body-item-shopButton:hover {
+    background-color: #f8d43f;
+}
+
+.card__body-item-shopButton.inactive {
+    width: 46px;
+    pointer-events: none;
+    cursor: default;
+}
+
+.card__body-item-shopButton-cover {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 16px;
+    height: 16px;
+}
+
+.card__body-item-shopButton-check {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 100%;
+    height: 100%;
+    transform: translate(-100%,-73%) rotate(-45deg);
+}
+
+.card__body-item-shopButton-check:after,.card__body-item-shopButton-check:before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-color: #303841;
+    border-radius: 10px;
+}
+
+.card__body-item-shopButton-check:before {
+    width: 3px;
+    height: 50%;
+}
+
+.card__body-item-shopButton-check:after {
+    width: 100%;
+    height: 3px;
+}
+
+.card__body-cartItem {
+    display: flex;
+    padding: 20px 0
+}
+
+.card__body-cart--empty {
+    position: absolute;
+}
+
+.card__body-cart--emptyText {
+    font-size: 14px;
+}
+
+.card__body-cart-left {
+    flex: 0;
+}
+
+.card__body-cart-right {
+    flex: 1;
+}
+
+.card__body-cart-itemName {
+    line-height: 1.5;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.card__body-cart-itemPrice {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+.card__body-cart-action, .card__body-cart-itemCount {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.card__body-cart-itemCount {
+    flex: 1;
+}
+
+.card__body-cart-countNumber {
+    text-align: center;
+    font-size: 14px;
+    width: 20px;
+    margin: 0 8px;
+}
+
+.card__body-cart-countButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #eee;
+    line-height: 28px;
+    font-size: 16px;
+    font-weight: 700;
+    width: 28px;
+    height: 28px;
+    border-radius: 100%;
+    transition: .2s;
+    cursor: pointer;
+}
+
+.card__body-cart-countButton:hover {
+    background-color: #ddd;
+}
+
+.card__body-cart-itemRemove {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f6c90e;
+    width: 28px;
+    height: 28px;
+    border-radius: 100%;
+    transition: all .25s ease;
+    transition: .2s;
+    cursor: pointer;
+}
+
+.card__body-cart-itemRemove:hover {
+    background-color: #f8d43f;
+    box-shadow: -2px 2px 4px rgba(0,0,0,.15)
+}
+
+.card__body-cart-itemRemove img {
+    width: 16px;
+    height: 16px
+}
+
+.card__body-cart-itemImage {
+    background-color: #eee;
+    width: 90px;
+    height: 90px;
+    border-radius: 100%;
+    margin-right: 34px
+}
+
+.card__body-cart-itemImageBlock img {
+    display: block;
+    width: 140%;
+    transform: rotate(-28deg) translateY(-40px);
+    filter: drop-shadow(0 30px 20px rgba(0,0,0,.2))
+}
+
+.no-content-leave-active {
+    transition: opacity .7s;
+    position: absolute
+}
+
+.no-content-leave-to {
+    transform: scale(0);
+    opacity: 0
+}
